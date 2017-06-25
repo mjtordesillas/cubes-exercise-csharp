@@ -1,31 +1,17 @@
 ﻿namespace CubesExercise
 {
-    public class Point
+    public
+        class Point
     {
-        private double x;
-        private double y;
-        private double z;
+        public double X { get; }
+        public double Y { get; }
+        public double Z { get; }
 
         public Point(double x, double y, double z)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-        }
-
-        public double X
-        {
-            get { return x; }
-        }
-
-        public double Y
-        {
-            get { return y; }
-        }
-
-        public double Z
-        {
-            get { return z; }
+            X = x;
+            Y = y;
+            Z = z;
         }
     }
 }
