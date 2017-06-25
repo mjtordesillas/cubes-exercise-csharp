@@ -1,4 +1,6 @@
-﻿namespace CubesExercise
+﻿using System;
+
+namespace CubesExercise
 {
     public class Cube
     {
@@ -30,7 +32,7 @@
         {
             if (MaxX >= cube.MinX && MinX <= cube.MaxX )
             {
-                return (MaxX - cube.MinX)
+                return widthOverlap(cube)
                     * edgeLength
                     * edgeLength;
             }
@@ -38,6 +40,11 @@
             {
                 return 0;
             }
+        }
+
+        private double widthOverlap(Cube cube)
+        {
+            return Math.Max(0, Math.Min(MaxX, cube.MaxX) - Math.Max(MinX, cube.MinX));
         }
     }
 }
