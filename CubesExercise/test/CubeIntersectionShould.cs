@@ -13,8 +13,8 @@ namespace CubesExercise
             Cube cubeA = new Cube(new Point(2, 2, 2), 2);
             Cube cubeB = new Cube(new Point(10, 10, 10), 2);
 
-            Assert.AreEqual(0, cubeA.intersectionVolumeWith(cubeB));
-            Assert.AreEqual(0, cubeB.intersectionVolumeWith(cubeA));
+            Assert.AreEqual(0, cubeA.IntersectionVolumeWith(cubeB));
+            Assert.AreEqual(0, cubeB.IntersectionVolumeWith(cubeA));
         }
 
         [TestMethod]
@@ -23,8 +23,8 @@ namespace CubesExercise
             Cube cubeA = new Cube(new Point(2, 2, 2), 2);
             Cube cubeB = new Cube(new Point(3, 2, 2), 2);
 
-            Assert.AreEqual(4, cubeA.intersectionVolumeWith(cubeB));
-            Assert.AreEqual(4, cubeB.intersectionVolumeWith(cubeA));
+            Assert.AreEqual(4, cubeA.IntersectionVolumeWith(cubeB));
+            Assert.AreEqual(4, cubeB.IntersectionVolumeWith(cubeA));
         }
 
         [TestMethod]
@@ -33,8 +33,8 @@ namespace CubesExercise
             Cube cubeA = new Cube(new Point(2, 2, 2), 2);
             Cube cubeB = new Cube(new Point(2, 3, 2), 2);
 
-            Assert.AreEqual(4, cubeA.intersectionVolumeWith(cubeB));
-            Assert.AreEqual(4, cubeB.intersectionVolumeWith(cubeA));
+            Assert.AreEqual(4, cubeA.IntersectionVolumeWith(cubeB));
+            Assert.AreEqual(4, cubeB.IntersectionVolumeWith(cubeA));
         }
 
         [TestMethod]
@@ -43,8 +43,8 @@ namespace CubesExercise
             Cube cubeA = new Cube(new Point(2, 2, 2), 2);
             Cube cubeB = new Cube(new Point(2, 2, 3), 2);
 
-            Assert.AreEqual(4, cubeA.intersectionVolumeWith(cubeB));
-            Assert.AreEqual(4, cubeB.intersectionVolumeWith(cubeA));
+            Assert.AreEqual(4, cubeA.IntersectionVolumeWith(cubeB));
+            Assert.AreEqual(4, cubeB.IntersectionVolumeWith(cubeA));
         }
 
         [TestMethod]
@@ -53,8 +53,8 @@ namespace CubesExercise
             Cube cubeA = new Cube(new Point(2, 2, 2), 2);
             Cube cubeB = new Cube(new Point(2, 2, 2), 1);
 
-            Assert.AreEqual(1, cubeA.intersectionVolumeWith(cubeB));
-            Assert.AreEqual(1, cubeB.intersectionVolumeWith(cubeA));
+            Assert.AreEqual(1, cubeA.IntersectionVolumeWith(cubeB));
+            Assert.AreEqual(1, cubeB.IntersectionVolumeWith(cubeA));
         }
 
         [TestMethod]
@@ -63,8 +63,8 @@ namespace CubesExercise
             Cube cubeA = new Cube(new Point(2, 2, 2), 2);
             Cube cubeB = new Cube(new Point(2, 2, 2), 2);
 
-            Assert.AreEqual(8, cubeA.intersectionVolumeWith(cubeB));
-            Assert.AreEqual(8, cubeB.intersectionVolumeWith(cubeA));
+            Assert.AreEqual(8, cubeA.IntersectionVolumeWith(cubeB));
+            Assert.AreEqual(8, cubeB.IntersectionVolumeWith(cubeA));
         }
 
         [TestMethod]
@@ -73,8 +73,8 @@ namespace CubesExercise
             Cube cubeA = new Cube(new Point(2, 2, 2), 2);
             Cube cubeB = new Cube(new Point(4, 2, 2), 2);
 
-            Assert.AreEqual(0, cubeA.intersectionVolumeWith(cubeB));
-            Assert.AreEqual(0, cubeB.intersectionVolumeWith(cubeA));
+            Assert.AreEqual(0, cubeA.IntersectionVolumeWith(cubeB));
+            Assert.AreEqual(0, cubeB.IntersectionVolumeWith(cubeA));
         }
     }
 }

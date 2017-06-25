@@ -48,13 +48,13 @@ namespace CubesExercise
             get { return edgeLength / 2.0; }
         }
 
-        public double intersectionVolumeWith(Cube cube)
+        public double IntersectionVolumeWith(Cube cube)
         {
             if (MaxX >= cube.MinX && MinX <= cube.MaxX )
             {
-                return widthOverlap(cube)
-                    * heightOverlap(cube)
-                    * depthOverlap(cube);
+                return WidthOverlap(cube)
+                    * HeightOverlap(cube)
+                    * DepthOverlap(cube);
             }
             else
             {
@@ -62,17 +62,17 @@ namespace CubesExercise
             }
         }
 
-        private double widthOverlap(Cube cube)
+        private double WidthOverlap(Cube cube)
         {
             return Math.Max(0, Math.Min(MaxX, cube.MaxX) - Math.Max(MinX, cube.MinX));
         }
 
-        private double heightOverlap(Cube cube)
+        private double HeightOverlap(Cube cube)
         {
             return Math.Max(0, Math.Min(MaxY, cube.MaxY) - Math.Max(MinY, cube.MinY));
         }
 
-        private double depthOverlap(Cube cube)
+        private double DepthOverlap(Cube cube)
         {
             return Math.Max(0, Math.Min(MaxZ, cube.MaxZ) - Math.Max(MinZ, cube.MinZ));
         }
