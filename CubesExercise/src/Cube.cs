@@ -13,32 +13,32 @@ namespace CubesExercise
             this.edgeLength = edgeLength;
         }
 
-        public double MinX
+        private double MinX
         {
             get { return point.X - ProjectedDistanceFromCenter; }
         }
 
-        public double MaxX
+        private double MaxX
         {
             get { return point.X + ProjectedDistanceFromCenter; }
         }
 
-        public double MinY
+        private double MinY
         {
             get { return point.Y - ProjectedDistanceFromCenter; }
         }
 
-        public double MaxY
+        private double MaxY
         {
             get { return point.Y + ProjectedDistanceFromCenter; }
         }
 
-        public double MinZ
+        private double MinZ
         {
             get { return point.Z - ProjectedDistanceFromCenter; }
         }
 
-        public double MaxZ
+        private double MaxZ
         {
             get { return point.Z + ProjectedDistanceFromCenter; }
         }
