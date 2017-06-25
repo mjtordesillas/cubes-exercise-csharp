@@ -6,13 +6,15 @@ namespace CubesExercise
     [TestClass]
     public class CubeIntersectionShould
     {
+
         [TestMethod]
         public void be_zero_when_cubes_do_not_intersect()
         {
-            Cube cubeA = new Cube(new Point(2, 2, 2), 1);
-            Cube cubeB = new Cube(new Point(10, 10, 10), 1);
+            Cube cubeA = new Cube(new Point(2, 2, 2), 2);
+            Cube cubeB = new Cube(new Point(10, 10, 10), 2);
 
             Assert.AreEqual(0, cubeA.intersectionVolumeWith(cubeB));
+            Assert.AreEqual(0, cubeB.intersectionVolumeWith(cubeA));
         }
 
         [TestMethod]
@@ -43,6 +45,36 @@ namespace CubesExercise
 
             Assert.AreEqual(4, cubeA.intersectionVolumeWith(cubeB));
             Assert.AreEqual(4, cubeB.intersectionVolumeWith(cubeA));
+        }
+
+        [TestMethod]
+        public void be_equal_to_the_volume_of_the_smaller_cube_when_it_is_contained_by_the_bigger_cube()
+        {
+            Cube cubeA = new Cube(new Point(2, 2, 2), 2);
+            Cube cubeB = new Cube(new Point(2, 2, 2), 1);
+
+            Assert.AreEqual(1, cubeA.intersectionVolumeWith(cubeB));
+            Assert.AreEqual(1, cubeB.intersectionVolumeWith(cubeA));
+        }
+
+        [TestMethod]
+        public void be_equal_to_the_volume_of_any_cube_when_they_are_the_same()
+        {
+            Cube cubeA = new Cube(new Point(2, 2, 2), 2);
+            Cube cubeB = new Cube(new Point(2, 2, 2), 2);
+
+            Assert.AreEqual(8, cubeA.intersectionVolumeWith(cubeB));
+            Assert.AreEqual(8, cubeB.intersectionVolumeWith(cubeA));
+        }
+
+        [TestMethod]
+        public void be_zero_when_cubes_are_touching_but_not_intersecting()
+        {
+            Cube cubeA = new Cube(new Point(2, 2, 2), 2);
+            Cube cubeB = new Cube(new Point(4, 2, 2), 2);
+
+            Assert.AreEqual(0, cubeA.intersectionVolumeWith(cubeB));
+            Assert.AreEqual(0, cubeB.intersectionVolumeWith(cubeA));
         }
     }
 }
