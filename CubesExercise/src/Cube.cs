@@ -64,17 +64,23 @@ namespace CubesExercise
 
         private double WidthOverlap(Cube cube)
         {
-            return Math.Max(0, Math.Min(MaxX, cube.MaxX) - Math.Max(MinX, cube.MinX));
+            return ProjectedSegmentsOverlap(MinX, MaxX, cube.MinX, cube.MaxX);
         }
 
         private double HeightOverlap(Cube cube)
         {
-            return Math.Max(0, Math.Min(MaxY, cube.MaxY) - Math.Max(MinY, cube.MinY));
+            return ProjectedSegmentsOverlap(MinY, MaxY, cube.MinY, cube.MaxY);
         }
 
         private double DepthOverlap(Cube cube)
         {
-            return Math.Max(0, Math.Min(MaxZ, cube.MaxZ) - Math.Max(MinZ, cube.MinZ));
+            return ProjectedSegmentsOverlap(MinZ, MaxZ, cube.MinZ, cube.MaxZ);
         }
+
+        private double ProjectedSegmentsOverlap(double minCoordinate1, double maxCoordinate1, double minCoordinate2, double maxCoordinate2)
+        {
+            return Math.Max(0, Math.Min(maxCoordinate1, maxCoordinate2) - Math.Max(minCoordinate1, minCoordinate2));
+        }
+
     }
 }
