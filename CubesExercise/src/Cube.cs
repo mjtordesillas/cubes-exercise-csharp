@@ -50,16 +50,9 @@ namespace CubesExercise
 
         public double IntersectionVolumeWith(Cube cube)
         {
-            if (MaxX >= cube.MinX && MinX <= cube.MaxX )
-            {
-                return WidthOverlap(cube)
-                    * HeightOverlap(cube)
-                    * DepthOverlap(cube);
-            }
-            else
-            {
-                return 0;
-            }
+            return WidthOverlap(cube)
+                * HeightOverlap(cube)
+                * DepthOverlap(cube);
         }
 
         private double WidthOverlap(Cube cube)
