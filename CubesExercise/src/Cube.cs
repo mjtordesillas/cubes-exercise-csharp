@@ -33,6 +33,16 @@ namespace CubesExercise
             get { return point.Y + ProjectedDistanceFromCenter; }
         }
 
+        public double MinZ
+        {
+            get { return point.Z - ProjectedDistanceFromCenter; }
+        }
+
+        public double MaxZ
+        {
+            get { return point.Z + ProjectedDistanceFromCenter; }
+        }
+
         private double ProjectedDistanceFromCenter
         {
             get { return edgeLength / 2.0; }
@@ -44,7 +54,7 @@ namespace CubesExercise
             {
                 return widthOverlap(cube)
                     * heightOverlap(cube)
-                    * edgeLength;
+                    * depthOverlap(cube);
             }
             else
             {
@@ -60,6 +70,11 @@ namespace CubesExercise
         private double heightOverlap(Cube cube)
         {
             return Math.Max(0, Math.Min(MaxY, cube.MaxY) - Math.Max(MinY, cube.MinY));
+        }
+
+        private double depthOverlap(Cube cube)
+        {
+            return Math.Max(0, Math.Min(MaxZ, cube.MaxZ) - Math.Max(MinZ, cube.MinZ));
         }
     }
 }

@@ -34,5 +34,15 @@ namespace CubesExercise
             Assert.AreEqual(4, cubeA.intersectionVolumeWith(cubeB));
             Assert.AreEqual(4, cubeB.intersectionVolumeWith(cubeA));
         }
+
+        [TestMethod]
+        public void be_correct_for_intersecting_cubes_with_width_and_height_fixed()
+        {
+            Cube cubeA = new Cube(new Point(2, 2, 2), 2);
+            Cube cubeB = new Cube(new Point(2, 2, 3), 2);
+
+            Assert.AreEqual(4, cubeA.intersectionVolumeWith(cubeB));
+            Assert.AreEqual(4, cubeB.intersectionVolumeWith(cubeA));
+        }
     }
 }
