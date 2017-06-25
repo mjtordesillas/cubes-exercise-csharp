@@ -51,6 +51,7 @@
     <Compile Include="src\Cube.cs" />
     <Compile Include="src\Edge.cs" />
     <Compile Include="test\CubeBuilder.cs" />
+    <Compile Include="test\CubeCollisionDetectionTest.cs" />
     <Compile Include="test\CubeIntersectionVolumeComputationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Point.cs" />

@@ -15,8 +15,8 @@ namespace CubesExercise
 
         public double Overlap(Edge edge)
         {
-            return Math.Max(0, Math.Min(end, edge.end) -
-                Math.Max(start, edge.start));
+            return  Math.Min(end, edge.end) -
+                Math.Max(start, edge.start);
         }
     }
 }

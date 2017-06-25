@@ -19,12 +19,19 @@ namespace CubesExercise
             height = new Edge(center.Y, EdgeLength);
             depth = new Edge(center.Z, EdgeLength);
         }
- 
+
         public double IntersectionVolumeWith(Cube cube)
         {
-            return width.Overlap(cube.width)
-                * height.Overlap(cube.height)
-                * depth.Overlap(cube.depth);
+            return Math.Max(0, width.Overlap(cube.width))
+                * Math.Max(0, height.Overlap(cube.height))
+                * Math.Max(0, depth.Overlap(cube.depth));
+        }
+
+        public bool CollidesWith(Cube cube)
+        {
+            return width.Overlap(cube.width) >= 0
+                || height.Overlap(cube.height) >= 0
+                || depth.Overlap(cube.depth) >= 0 ;
         }
     }
 }
